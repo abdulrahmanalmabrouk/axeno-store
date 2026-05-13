@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AXENO — بلوار هواء يدوي</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ====== الناف بار ====== -->
+
+  <nav class="navbar">
+    <span class="nav-logo">AXENO</span>
+    <span class="nav-tag">حلول لحياة أفضل</span>
+    <a href="#order" class="nav-cta">اطلب الآن</a>
+  </nav>
+
+  <!-- ====== الهيرو ====== -->
+
+  <section class="hero">
+    <div class="hero-text">
+      <span class="badge">منتج مميز ✦</span>
+      <h1 class="hero-title">
+        بلوار هواء<br />
+        <span class="highlight">يدوي</span>
+      </h1>
+      <p class="hero-desc">
+        تخلص من التراب في ثواني — مناسب للكاميرات،
+        الكمبيوتر، والأدوات الدقيقة. خفيف، قوي،
+        وسهل الاستخدام في أي مكان.
+      </p>
+      <div class="hero-price-row">
+        <!-- ✏️ غيّر السعر هنا -->
+        <span class="hero-price">549 جنيه</span>
+        <span class="hero-price-note">دفع عند الاستلام</span>
+      </div>
+      <a href="#order" class="cta-btn">اطلب دلوقتي</a>
+    </div>
+<div class="hero-image">
+  <div class="image-frame">
+    <!--
+      📸 عشان تضيف صورة المنتج:
+      1. احفظ صورة البلوار في نفس الفولدر باسم: product.jpg
+      2. احذف السطر ده (div.image-placeholder) بالكامل
+      3. وحط بدله: <img src="product.jpg" alt="AXENO Blower" />
+    -->
+<div class="image-frame">
+  <img src="product.jpg" alt="AXENO Blower">
+</div>
+</div>
+
+  </section>
+
+  <!-- ====== شريط المميزات ====== -->
+
+  <div class="features-bar">
+    <div class="feature-item">
+      <span class="feature-icon">🚚</span>
+      <span>توصيل سريع</span>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">💳</span>
+      <span>دفع عند الاستلام</span>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">⭐</span>
+      <span>جودة مضمونة</span>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">📦</span>
+      <span>تغليف محكم</span>
+    </div>
+  </div>
+
+  <!-- ====== قسم الطلب ====== -->
+
+  <section class="order-section" id="order">
+    <div class="order-header">
+      <p class="section-label">سجّل بياناتك</p>
+      <h2 class="section-title">اطلب الآن</h2>
+      <p class="section-sub">وهنتواصل معاك لتأكيد الطلب والتوصيل</p>
+    </div>
+<!-- رسالة النجاح -->
+<div class="success-msg" id="successMsg">
+  <div class="success-icon">✅</div>
+  <h3>تم استلام طلبك!</h3>
+  <p>شكراً ليك — هنتواصل معاك في أقرب وقت لتأكيد الطلب والتوصيل.</p>
+</div>
+
+<!--
+  ✏️ مهم: غيّر YOUR_FORM_ID
+  1. روح formspree.io وعمل حساب مجاني
+  2. اعمل New Form وحط إيميلك
+  3. خذ الـ ID وحطه هنا بدل YOUR_FORM_ID
+-->
+<form id="orderForm" class="order-form"
+      action="https://formspree.io/f/mqenozyk"
+      method="POST">
+
+  <!-- كارت المنتج -->
+  <div class="product-card">
+    <div class="product-thumb">
+      <!--
+        📸 لو ضفت صورة:
+        احذف الإيموجي وحط:
+        <img src="product.jpg" alt="AXENO Blower" />
+      -->
+      <img src="product.jpg" alt="AXENO Blower" />
+    </div>
+    <div class="product-info">
+      <p class="product-name">AXENO Blower — بلوار هواء يدوي</p>
+      <!-- ✏️ السعر بيتحسب أوتوماتيك من script.js -->
+      <p class="product-price" id="totalPrice">الإجمالي: 549 جنيه</p>
+    </div>
+    <div class="qty-control">
+      <button type="button" class="qty-btn" onclick="changeQty(-1)">−</button>
+      <span class="qty-num" id="qtyDisplay">1</span>
+      <button type="button" class="qty-btn" onclick="changeQty(1)">+</button>
+    </div>
+    <input type="hidden" name="الكمية" id="qtyInput" value="1" />
+  </div>
+
+  <!-- بيانات العميل --><div class="form-row">
+    <div class="form-group">
+      <label>الاسم الكامل <span class="required">*</span></label>
+      <input type="text" name="الاسم" placeholder="اكتب اسمك هنا" required />
+    </div>
+    <div class="form-group">
+      <label>رقم الهاتف <span class="required">*</span></label>
+      <input type="tel" name="الهاتف" placeholder="01xxxxxxxxx" required />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>المحافظة <span class="required">*</span></label>
+    <select name="المحافظة" required>
+      <option value="" disabled selected>اختار محافظتك</option>
+      <option>القاهرة</option>
+      <option>الجيزة</option>
+      <option>الإسكندرية</option>
+      <option>الدقهلية</option>
+      <option>البحيرة</option>
+      <option>الغربية</option>
+      <option>المنوفية</option>
+      <option>الشرقية</option>
+      <option>القليوبية</option>
+      <option>كفر الشيخ</option>
+      <option>دمياط</option>
+      <option>بورسعيد</option>
+      <option>السويس</option>
+      <option>الإسماعيلية</option>
+      <option>الفيوم</option>
+      <option>بني سويف</option>
+      <option>المنيا</option>
+      <option>أسيوط</option>
+      <option>سوهاج</option>
+      <option>قنا</option>
+      <option>الأقصر</option>
+      <option>أسوان</option>
+      <option>البحر الأحمر</option>
+      <option>مطروح</option>
+      <option>شمال سيناء</option>
+      <option>جنوب سيناء</option>
+      <option>الوادي الجديد</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>العنوان التفصيلي <span class="required">*</span></label>
+    <input type="text" name="العنوان" placeholder="الشارع — الحي — المدينة" required />
+  </div>
+
+  <div class="form-group">
+    <label>ملاحظات <span class="optional">(اختياري)</span></label>
+    <textarea name="ملاحظات" placeholder="أي ملاحظات على الطلب؟"></textarea>
+  </div>
+
+  <button type="submit" class="submit-btn" id="submitBtn">
+    تأكيد الطلب ✦
+  </button>
+</form>
+
+  </section>
+
+  <!-- ====== الفوتر ====== -->
+
+  <footer class="footer">
+    <span class="footer-logo">AXENO</span>
+    <span class="footer-copy">© 2025 AXENO — جميع الحقوق محفوظة</span>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
